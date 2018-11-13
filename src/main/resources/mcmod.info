@@ -1,0 +1,13 @@
+[{
+	"modid": "solder",
+	"name": "Solder",
+	"description": "Minecraft with more craft.",
+	"version": "${version}",
+	"mcversion": "${mcversion}",
+	"authorList": [
+		"Reece2D"
+	],
+	"dependencies": [
+		"mod_MinecraftForge"
+	]
+}]
