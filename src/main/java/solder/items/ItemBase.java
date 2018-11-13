@@ -1,6 +1,8 @@
 package solder.items;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import solder.Solder;
 
 public class ItemBase extends Item {
 
@@ -10,6 +12,16 @@ public class ItemBase extends Item {
         this.name = name;
         setUnlocalizedName(name);
         setRegistryName(name);
+    }
+
+    @Override
+    public ItemBase setCreativeTab(CreativeTabs tab) {
+        super.setCreativeTab(tab);
+        return this;
+    }
+
+    public void registerItemModel() {
+        Solder.proxy.registerItemRenderer(this, 0, name);
     }
 
 }

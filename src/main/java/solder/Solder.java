@@ -6,6 +6,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import solder.items.ItemRegistrar;
 import solder.proxy.CommonProxy;
 
 @Mod(
@@ -30,12 +31,12 @@ public class Solder {
 
         @SubscribeEvent
         public static void registerItems(RegistryEvent.Register<Item> event) {
-            System.out.println("registerItems");
+            ItemRegistrar.register(event.getRegistry());
         }
 
         @SubscribeEvent
         public static void registerModels(ModelRegistryEvent event) {
-            System.out.println("registerModels");
+            ItemRegistrar.registerModels();
         }
 
     }
