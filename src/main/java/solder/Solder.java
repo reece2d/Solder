@@ -1,10 +1,11 @@
 package solder;
 
+import net.minecraft.item.Item;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import solder.proxy.CommonProxy;
 
 @Mod(
@@ -24,16 +25,18 @@ public class Solder {
 
     }
 
-    @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
+    @Mod.EventBusSubscriber
+    public static class RegistrationHandler {
 
-    }
-    @Mod.EventHandler
-    public void init(FMLInitializationEvent event) {
+        @SubscribeEvent
+        public static void registerItems(RegistryEvent.Register<Item> event) {
+            System.out.println("registerItems");
+        }
 
-    }
-    @Mod.EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
+        @SubscribeEvent
+        public static void registerModels(ModelRegistryEvent event) {
+            System.out.println("registerModels");
+        }
 
     }
 }
