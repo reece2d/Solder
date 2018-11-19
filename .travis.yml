@@ -12,3 +12,4 @@ jobs:
   include:
     - stage: build
       install: ./gradlew setupCiWorkspace
+      script: ./gradlew build
